@@ -13,6 +13,7 @@ import {
   HStack,
   Box,
   useToast,
+  Link as ChakraLink,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
@@ -39,6 +40,13 @@ const Signin = () => {
       const { token } = data;
 
       if (token) {
+        toast({
+          title: "Login Successful",
+          description: "Redirecting to your dashboard...",
+          status: "success",
+          duration: 2500, // Increased slightly for better readability
+          isClosable: true,
+        });
         login(token);
       }
     },
@@ -52,7 +60,7 @@ const Signin = () => {
   });
 
   return (
-    <Container bg="white">
+    <Container bg="white" px="4">
       <Center minH="100vh">
         <Card>
           <Text fontWeight="medium" textStyle="h1">
@@ -108,11 +116,9 @@ const Signin = () => {
                       <Text textStyle="p3">Remember me</Text>
                     </Checkbox>
 
-                    <Link to="/forgot-password">
-                      <Text textStyle="p3" as="span" color="p.purple">
-                        Forgot password?
-                      </Text>
-                    </Link>
+                    <ChakraLink as={Link} to="/forgot-password" textStyle="p3" color="black.60" _hover={{ textDecoration: 'underline' }}>
+                      Forgot password?
+                    </ChakraLink>
                   </HStack>
                   <Box>
                     <Button isLoading={isLoading} w="full" type="submit">

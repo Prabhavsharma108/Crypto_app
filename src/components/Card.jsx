@@ -7,15 +7,13 @@ const Card = ({ children, showCard = false, ...props }) => {
         base: showCard ? "white" : "transparent",
         md: "white",
       }}
-      p={{
-        base: showCard ? "4" : "0",
-        md: "6",
-      }}
+      p={{ base: showCard ? "4" : "4", md: "6" }}
       borderRadius={{
         base: showCard ? "1rem" : "none",
         md: "1rem",
       }}
-      w="456px"
+      maxW="456px"
+      w="full"
       boxShadow={{
         base: showCard ? "md" : "none",
         md: "lg",

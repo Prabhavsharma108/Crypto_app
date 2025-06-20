@@ -94,7 +94,7 @@ export const theme = extendTheme(
           base: "12px",
         },
         color: "p.black",
-        lineHeight: { base: "14px" },
+      lineHeight: { base: "18px" },
       },
     },
 
